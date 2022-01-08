@@ -26,7 +26,7 @@ jobs:
         run: dotnet restore
 
       - name: Publish to folder
-        run: msbuild src\BeachRentals\BeachRentals\myproj.csproj /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
+        run: msbuild src\BeachRentals\BeachRentals.csproj /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
