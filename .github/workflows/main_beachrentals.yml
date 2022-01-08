@@ -27,6 +27,9 @@ jobs:
 
       - name: Publish to folder
         run: msbuild BeachRentals.csproj /nologo /verbosity:m /t:Build /p:_PackageTempDir="\published\"
+        
+      - name: Copy to published
+        run: cp -r "\bin\Debug\netcoreapp3.1\*" "\published\"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
